@@ -1,3 +1,5 @@
+import request from "./request";
+
 export function profile() {
-  return null;
+    return request.get('/profile');
 }
