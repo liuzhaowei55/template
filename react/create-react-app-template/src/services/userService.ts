@@ -1,5 +1,5 @@
-import request from "./request";
+import request from './request';
 
 export function profile() {
-    return request.get('/profile');
+  return request.get('/profile');
 }

@@ -5,15 +5,18 @@ import {CssBaseline} from '@mui/material';
 import {Provider} from 'mobx-react';
 
 import reportWebVitals from './reportWebVitals';
-import routes from './routes';
+import Routes from './routes';
 import stores from './models/stores';
+
 
 ReactDOM.render(
     <React.StrictMode>
         <React.Fragment>
             <CssBaseline/>
             <Provider {...stores}>
-                <BrowserRouter>{routes()}</BrowserRouter>
+                <BrowserRouter>
+                    <Routes/>
+                </BrowserRouter>
             </Provider>
         </React.Fragment>
     </React.StrictMode>,
