@@ -1,22 +1,20 @@
-import React, { FC } from 'react';
-import { Route, Routes } from 'react-router-dom';
-import { Provider } from 'mobx-react';
+import React, {ReactElement, lazy, Suspense} from 'react';
+import {Route, Routes} from 'react-router-dom';
+
 import Layout from './layouts/Index';
-import App from './pages/App';
+import Loading from "./pages/Loading";
 
-import stores from './models/stores';
+const App = lazy(() => import('./pages/App'))
 
-const routes: FC = () => {
-  return (
-    <Provider {...stores}>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<App />} />
-          <Route path="index" element={<App />} />
-        </Route>
-      </Routes>
-    </Provider>
-  );
+const routes = (): ReactElement => {
+    return (
+        <Routes>
+            <Route path="/" element={<Layout/>}>
+                <Route index element={<Suspense fallback={<Loading/>} children={<App/>}/>}/>
+                <Route path="index" element={<Suspense fallback={<Loading/>} children={<App/>}/>}/>
+            </Route>
+        </Routes>
+    );
 };
 
 export default routes;

@@ -1,19 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
-import { CssBaseline } from '@mui/material';
+import {BrowserRouter} from 'react-router-dom';
+import {CssBaseline} from '@mui/material';
+import {Provider} from 'mobx-react';
 
 import reportWebVitals from './reportWebVitals';
 import routes from './routes';
+import stores from './models/stores';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <React.Fragment>
-      <CssBaseline />
-      <BrowserRouter>{routes({})}</BrowserRouter>
-    </React.Fragment>
-  </React.StrictMode>,
-  document.getElementById('root'),
+    <React.StrictMode>
+        <React.Fragment>
+            <CssBaseline/>
+            <Provider {...stores}>
+                <BrowserRouter>{routes()}</BrowserRouter>
+            </Provider>
+        </React.Fragment>
+    </React.StrictMode>,
+    document.getElementById('root'),
 );
 
 // If you want to start measuring performance in your app, pass a function
