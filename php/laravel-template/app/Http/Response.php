@@ -13,7 +13,7 @@ class Response
     {
     }
 
-    public static function buildSuccess($data = null): \Illuminate\Http\JsonResponse
+    public static function buildSuccess($data = null, int $status = 200): \Illuminate\Http\JsonResponse
     {
         $response = new Response();
         $response->success = true;
@@ -21,10 +21,10 @@ class Response
         $response->errMessage = 'OK';
         $response->data = $data;
 
-        return response()->json($response);
+        return response()->json($response, $status);
     }
 
-    public static function buildFailure(string $errCode, string $errMessage, $data = null): \Illuminate\Http\JsonResponse
+    public static function buildFailure(string $errCode, string $errMessage, $data = null, int $status = 200): \Illuminate\Http\JsonResponse
     {
         $response = new Response();
         $response->success = false;
@@ -32,7 +32,7 @@ class Response
         $response->errMessage = $errMessage;
         $response->data = $data;
 
-        return response()->json($response);
+        return response()->json($response, $status);
     }
 
 }

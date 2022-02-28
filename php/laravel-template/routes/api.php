@@ -19,3 +19,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('/api', [\App\Http\Controllers\IndexController::class, 'api']);
+
+Route::any('/login', [\App\Http\Controllers\Auth\LoginController::class, 'login']);
