@@ -1,18 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {BrowserRouter} from 'react-router-dom';
-import {CssBaseline} from '@mui/material';
+import {CssBaseline, GlobalStyles} from '@mui/material';
 import {Provider} from 'mobx-react';
 
 import reportWebVitals from './reportWebVitals';
 import Routes from './routes';
 import stores from './models/stores';
+import globalStyle from './styles/globalStyle';
 
 
 ReactDOM.render(
     <React.StrictMode>
         <React.Fragment>
             <CssBaseline/>
+            <GlobalStyles styles={globalStyle} />
             <Provider {...stores}>
                 <BrowserRouter>
                     <Routes/>
