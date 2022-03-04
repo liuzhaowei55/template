@@ -7,22 +7,22 @@ import {Provider} from 'mobx-react';
 import reportWebVitals from './reportWebVitals';
 import Routes from './routes';
 import stores from './models/stores';
-import globalStyle from './styles/globalStyle';
+import global from './styles/global';
 
-
+const globalStyles = <GlobalStyles styles={global}/>
 ReactDOM.render(
-    <React.StrictMode>
-        <React.Fragment>
-            <CssBaseline/>
-            <GlobalStyles styles={globalStyle} />
-            <Provider {...stores}>
-                <BrowserRouter>
-                    <Routes/>
-                </BrowserRouter>
-            </Provider>
-        </React.Fragment>
-    </React.StrictMode>,
-    document.getElementById('root'),
+  <React.StrictMode>
+    <React.Fragment>
+      <CssBaseline/>
+      {globalStyles}
+      <Provider {...stores}>
+        <BrowserRouter>
+          <Routes/>
+        </BrowserRouter>
+      </Provider>
+    </React.Fragment>
+  </React.StrictMode>,
+  document.getElementById('root'),
 );
 
 // If you want to start measuring performance in your app, pass a function
