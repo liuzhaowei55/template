@@ -1,9 +1,18 @@
-import { Auth } from './Auth';
-import { App } from './App';
+import { createContext } from 'react';
+import Auth from './Auth';
+import App from './App';
+import { types } from 'mobx-state-tree';
 
-const stores = {
-  app: new App(),
-  auth: new Auth(),
-};
+export const RootStore = types.model({
+  app: App,
+  auth: Auth,
+});
 
-export default stores;
+export const rootStore = RootStore.create({
+  app: App.create({
+    locale: localStorage.getItem('locale') || 'zh-CN',
+  }),
+  auth: Auth.create(),
+});
+
+export const RootStoreContext = createContext(rootStore);

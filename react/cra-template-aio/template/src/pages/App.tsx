@@ -1,13 +1,14 @@
 import React, { ReactElement } from 'react';
-import { MobXProviderContext, observer } from 'mobx-react';
+import { observer } from 'mobx-react-lite';
 import { FormControl, InputLabel, MenuItem, Select, SelectChangeEvent } from '@mui/material';
+import { FormattedMessage, useIntl } from 'react-intl';
+import { RootStoreContext } from '../models/stores';
+
 import logo from './logo.svg';
 import './App.css';
-import { FormattedMessage, useIntl } from 'react-intl';
-import { App as AppConfig } from '../models/App';
 
 const App = (): ReactElement => {
-  const { app } = React.useContext(MobXProviderContext) as { app: AppConfig };
+  const { app } = React.useContext(RootStoreContext);
   const intl = useIntl();
 
   const changeLanguage = (event: SelectChangeEvent) => {
@@ -35,7 +36,7 @@ const App = (): ReactElement => {
           </InputLabel>
           <Select
             labelId="language-select-id"
-            label={intl.formatMessage({ id: 'language-select-id' })}
+            label={intl.formatMessage({ id: 'multiLanguage' })}
             value={app.locale}
             onChange={changeLanguage}
             sx={{ width: 200 }}

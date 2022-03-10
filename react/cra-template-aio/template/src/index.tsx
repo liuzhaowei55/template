@@ -2,11 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import { CssBaseline, GlobalStyles } from '@mui/material';
-import { Provider } from 'mobx-react';
 
 import reportWebVitals from './reportWebVitals';
 import Routes from './routes';
-import stores from './models/stores';
+import { RootStoreContext, rootStore } from './models/stores';
 import global from './styles/global';
 import I18n from './i18n';
 
@@ -16,13 +15,13 @@ ReactDOM.render(
     <React.Fragment>
       <CssBaseline />
       {globalStyles}
-      <Provider {...stores}>
+      <RootStoreContext.Provider value={rootStore}>
         <I18n>
           <BrowserRouter>
             <Routes />
           </BrowserRouter>
         </I18n>
-      </Provider>
+      </RootStoreContext.Provider>
     </React.Fragment>
   </React.StrictMode>,
   document.getElementById('root'),

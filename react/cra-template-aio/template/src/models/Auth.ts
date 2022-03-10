@@ -1,17 +1,17 @@
-import { makeAutoObservable } from 'mobx';
+import { types } from 'mobx-state-tree';
 
-export class Auth {
-  username: string | null = null;
+const Auth = types
+  .model({
+    username: types.maybeNull(types.string),
+  })
+  .actions((self) => ({
+    login({ username }: { username: string }) {
+      self.username = username;
+    },
 
-  constructor() {
-    makeAutoObservable(this);
-  }
+    logout() {
+      self.username = null;
+    },
+  }));
 
-  login({ username }: { username: string }) {
-    this.username = username;
-  }
-
-  logout() {
-    this.username = null;
-  }
-}
+export default Auth;

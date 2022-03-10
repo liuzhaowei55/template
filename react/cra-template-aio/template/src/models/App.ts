@@ -1,15 +1,14 @@
-import { makeAutoObservable } from 'mobx';
+import { types } from 'mobx-state-tree';
 
-export class App {
-  locale: string | undefined;
+const App = types
+  .model({
+    locale: types.string,
+  })
+  .actions((self) => ({
+    setLocale(locale: string) {
+      self.locale = locale;
+      localStorage.setItem('locale', locale);
+    },
+  }));
 
-  constructor() {
-    makeAutoObservable(this);
-    this.locale = localStorage.getItem('locale') || 'zh-CN';
-  }
-
-  setLocale(locale: string) {
-    this.locale = locale;
-    localStorage.setItem('locale', locale);
-  }
-}
+export default App;

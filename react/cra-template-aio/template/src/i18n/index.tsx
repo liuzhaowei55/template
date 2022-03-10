@@ -1,10 +1,10 @@
 import React, { FC, useContext, useEffect, useState } from 'react';
 import { createIntl, RawIntlProvider, createIntlCache, IntlConfig } from 'react-intl';
-import { MobXProviderContext, observer } from 'mobx-react';
+import { observer } from 'mobx-react-lite';
 
+import { RootStoreContext } from '../models/stores';
 import en from './lang/en';
 import zhCN from './lang/zh-CN';
-import { App } from '../models/App';
 
 const I18n: FC = ({ children }) => {
   const [intlConfig, setIntlConfig] = useState<IntlConfig>({
@@ -12,7 +12,7 @@ const I18n: FC = ({ children }) => {
     messages: zhCN,
     defaultLocale: 'zh-CN',
   });
-  const { app } = useContext(MobXProviderContext) as { app: App };
+  const { app } = useContext(RootStoreContext);
   const cache = createIntlCache();
 
   useEffect(() => {
