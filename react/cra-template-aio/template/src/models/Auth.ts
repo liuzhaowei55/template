@@ -1,17 +1,17 @@
-import {makeAutoObservable} from "mobx";
+import { makeAutoObservable } from 'mobx';
 
 export class Auth {
-    username: string | null = null;
+  username: string | null = null;
 
-    constructor() {
-        makeAutoObservable(this);
-    }
+  constructor() {
+    makeAutoObservable(this);
+  }
 
-    login({username}: { username: string }) {
-        this.username = username
-    }
+  login({ username }: { username: string }) {
+    this.username = username;
+  }
 
-    logout() {
-        this.username = null
-    }
+  logout() {
+    this.username = null;
+  }
 }

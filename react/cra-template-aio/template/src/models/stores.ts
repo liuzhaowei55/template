@@ -1,9 +1,9 @@
-import {Timer} from './Timer';
-import {Auth} from "./Auth";
+import { Auth } from './Auth';
+import { App } from './App';
 
 const stores = {
-    timer: new Timer(),
-    auth: new Auth()
+  app: new App(),
+  auth: new Auth(),
 };
 
 export default stores;
