@@ -4,8 +4,8 @@ import App from './App';
 import { types } from 'mobx-state-tree';
 
 const RootStore = types.model({
-  app: App,
-  auth: Auth,
+  app: types.optional(App, {}),
+  auth: types.optional(Auth, {}),
 });
 
 export const RootStoreContext = createContext(RootStore.create());

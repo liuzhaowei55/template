@@ -2,7 +2,7 @@ import { types } from 'mobx-state-tree';
 
 const App = types
   .model({
-    locale: types.string,
+    locale: types.maybeNull(types.string),
   })
   .actions((self) => ({
     setLocale(locale: string) {

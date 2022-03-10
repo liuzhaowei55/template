@@ -37,7 +37,7 @@ const App = (): ReactElement => {
           <Select
             labelId="language-select-id"
             label={intl.formatMessage({ id: 'multiLanguage' })}
-            value={app.locale}
+            value={app.locale || undefined}
             onChange={changeLanguage}
             sx={{ width: 200 }}
           >
