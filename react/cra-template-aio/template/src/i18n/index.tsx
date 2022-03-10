@@ -19,9 +19,9 @@ const I18n: FC = ({ children }) => {
     setIntlConfig((intlConfig) => {
       switch (app.locale) {
         case 'en':
-          return { locale: 'en', messages: en };
+          return { ...intlConfig, locale: 'en', messages: en };
         case 'zh-CN':
-          return { locale: 'zh-CN', messages: zhCN };
+          return { ...intlConfig, locale: 'zh-CN', messages: zhCN };
         default:
           return { ...intlConfig };
       }
