@@ -17,11 +17,7 @@ const App = (): ReactElement => {
   return (
     <div className="App">
       <header className="App-header">
-        <img
-          src={logo}
-          className="App-logo"
-          alt={intl.formatMessage({ id: 'alt', defaultMessage: 'aaa' })}
-        />
+        <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/pages/App.tsx</code> and save to reload.
         </p>
