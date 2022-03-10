@@ -5,7 +5,7 @@ import { CssBaseline, GlobalStyles } from '@mui/material';
 
 import reportWebVitals from './reportWebVitals';
 import Routes from './routes';
-import { RootStoreContext, rootStore } from './models/stores';
+import { RootStoreContext, rootStore } from './stores';
 import global from './styles/global';
 import I18n from './i18n';
 

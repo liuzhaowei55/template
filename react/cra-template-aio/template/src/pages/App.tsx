@@ -2,7 +2,7 @@ import React, { ReactElement } from 'react';
 import { observer } from 'mobx-react-lite';
 import { FormControl, InputLabel, MenuItem, Select, SelectChangeEvent } from '@mui/material';
 import { FormattedMessage, useIntl } from 'react-intl';
-import { RootStoreContext } from '../models/stores';
+import { RootStoreContext } from '../stores';
 
 import logo from './logo.svg';
 import './App.css';

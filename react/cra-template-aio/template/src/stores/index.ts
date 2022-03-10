@@ -3,10 +3,12 @@ import Auth from './Auth';
 import App from './App';
 import { types } from 'mobx-state-tree';
 
-export const RootStore = types.model({
+const RootStore = types.model({
   app: App,
   auth: Auth,
 });
+
+export const RootStoreContext = createContext(RootStore.create());
 
 export const rootStore = RootStore.create({
   app: App.create({
@@ -14,5 +16,3 @@ export const rootStore = RootStore.create({
   }),
   auth: Auth.create(),
 });
-
-export const RootStoreContext = createContext(rootStore);
