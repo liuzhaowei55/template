@@ -2,13 +2,13 @@ import React, { ReactElement } from 'react';
 import { observer } from 'mobx-react-lite';
 import { FormControl, InputLabel, MenuItem, Select, SelectChangeEvent } from '@mui/material';
 import { FormattedMessage, useIntl } from 'react-intl';
-import { RootStoreContext } from '../stores';
+import { useRootStoreContext } from '../stores';
 
 import logo from './logo.svg';
 import './App.css';
 
 const App = (): ReactElement => {
-  const { app } = React.useContext(RootStoreContext);
+  const { app } = useRootStoreContext();
   const intl = useIntl();
 
   const changeLanguage = (event: SelectChangeEvent) => {
@@ -39,7 +39,7 @@ const App = (): ReactElement => {
             label={intl.formatMessage({ id: 'multiLanguage' })}
             value={app.locale || undefined}
             onChange={changeLanguage}
-            sx={{ width: 200 }}
+            sx={{ width: 200, color: 'revert' }}
           >
             <MenuItem value="zh-CN">简体中文</MenuItem>
             <MenuItem value="en">English</MenuItem>

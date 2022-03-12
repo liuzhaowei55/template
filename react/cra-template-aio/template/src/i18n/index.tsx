@@ -1,8 +1,8 @@
-import React, { FC, useContext, useEffect, useState } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 import { createIntl, RawIntlProvider, createIntlCache, IntlConfig } from 'react-intl';
 import { observer } from 'mobx-react-lite';
 
-import { RootStoreContext } from '../stores';
+import { useRootStoreContext } from '../stores';
 import en from './lang/en';
 import zhCN from './lang/zh-CN';
 
@@ -12,7 +12,7 @@ const I18n: FC = ({ children }) => {
     messages: zhCN,
     defaultLocale: 'zh-CN',
   });
-  const { app } = useContext(RootStoreContext);
+  const { app } = useRootStoreContext();
   const cache = createIntlCache();
 
   useEffect(() => {

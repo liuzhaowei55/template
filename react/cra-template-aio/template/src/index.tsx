@@ -5,7 +5,6 @@ import { CssBaseline, GlobalStyles } from '@mui/material';
 
 import reportWebVitals from './reportWebVitals';
 import Routes from './routes';
-import { RootStoreContext, rootStore } from './stores';
 import global from './styles/global';
 import I18n from './i18n';
 
@@ -15,13 +14,11 @@ ReactDOM.render(
     <React.Fragment>
       <CssBaseline />
       {globalStyles}
-      <RootStoreContext.Provider value={rootStore}>
-        <I18n>
-          <BrowserRouter>
-            <Routes />
-          </BrowserRouter>
-        </I18n>
-      </RootStoreContext.Provider>
+      <I18n>
+        <BrowserRouter>
+          <Routes />
+        </BrowserRouter>
+      </I18n>
     </React.Fragment>
   </React.StrictMode>,
   document.getElementById('root'),
