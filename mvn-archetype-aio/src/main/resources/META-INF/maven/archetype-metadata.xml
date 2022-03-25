@@ -16,6 +16,23 @@
     </fileSets>
 
     <modules>
+        <module id="${rootArtifactId}-base" dir="__rootArtifactId__-base" name="${rootArtifactId}-base">
+            <fileSets>
+                <fileSet filtered="true" packaged="true" encoding="UTF-8">
+                    <directory>src/main/java</directory>
+                    <includes>
+                        <include>**/*.java</include>
+                    </includes>
+                </fileSet>
+                <fileSet filtered="true" packaged="true" encoding="UTF-8">
+                    <directory>src/test/java</directory>
+                    <includes>
+                        <include>**/*.java</include>
+                    </includes>
+                </fileSet>
+            </fileSets>
+        </module>
+
         <module id="${rootArtifactId}-client" dir="__rootArtifactId__-client" name="${rootArtifactId}-client">
             <fileSets>
                 <fileSet filtered="true" packaged="true" encoding="UTF-8">
@@ -34,7 +51,6 @@
                     <directory>src/main/java</directory>
                     <includes>
                         <include>**/*.java</include>
-                        <include>**/.gitkeep</include>
                     </includes>
                 </fileSet>
             </fileSets>
@@ -114,7 +130,6 @@
                     <directory>src/main/java</directory>
                     <includes>
                         <include>**/*.java</include>
-                        <include>**/.gitkeep</include>
                     </includes>
                 </fileSet>
                 <fileSet filtered="true" encoding="UTF-8">
@@ -128,7 +143,6 @@
                     <directory>src/test/java</directory>
                     <includes>
                         <include>**/*.java</include>
-                        <include>**/.gitkeep</include>
                     </includes>
                 </fileSet>
                 <fileSet filtered="true" encoding="UTF-8">

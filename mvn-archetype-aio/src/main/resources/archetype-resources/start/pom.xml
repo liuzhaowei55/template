@@ -5,9 +5,15 @@
         <groupId>${groupId}</groupId>
         <artifactId>${rootArtifactId}-parent</artifactId>
         <version>${version}</version>
-        <relativePath>../pom.xml</relativePath>
     </parent>
 
     <artifactId>${artifactId}</artifactId>
+
+    <dependencies>
+        <dependency>
+            <groupId>${groupId}</groupId>
+            <artifactId>${rootArtifactId}-adapter</artifactId>
+        </dependency>
+    </dependencies>
 
 </project>
