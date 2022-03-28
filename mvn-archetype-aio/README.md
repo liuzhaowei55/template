@@ -7,5 +7,6 @@ mvn archetype:generate  \
     -DgroupId=com.moorper.demo \
     -DartifactId=aio \
     -Dversion=1.0.0-SNAPSHOT \
-    -Dpackage=com.moorper.demo
+    -Dpackage=com.moorper.demo \
+    -DinteractiveMode=false
 ```

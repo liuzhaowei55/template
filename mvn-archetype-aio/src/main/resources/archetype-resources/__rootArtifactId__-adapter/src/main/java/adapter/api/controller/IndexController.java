@@ -1,7 +1,7 @@
 #set( $symbol_pound = '#' )
 #set( $symbol_dollar = '$' )
 #set( $symbol_escape = '\' )
-package ${package}.api.controller;
+package ${package}.adapter.api.controller;
 
 import com.alibaba.cola.dto.Response;
 import org.springframework.web.bind.annotation.GetMapping;

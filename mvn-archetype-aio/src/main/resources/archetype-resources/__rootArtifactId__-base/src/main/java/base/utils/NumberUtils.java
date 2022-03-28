@@ -1,7 +1,7 @@
 #set( $symbol_pound = '#' )
 #set( $symbol_dollar = '$' )
 #set( $symbol_escape = '\' )
-package ${package}.utils;
+package ${package}.base.utils;
 
 import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.Nullable;

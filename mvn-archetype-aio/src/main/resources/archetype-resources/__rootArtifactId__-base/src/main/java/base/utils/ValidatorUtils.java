@@ -1,7 +1,7 @@
 #set( $symbol_pound = '#' )
 #set( $symbol_dollar = '$' )
 #set( $symbol_escape = '\' )
-package ${package}.utils;
+package ${package}.base.utils;
 
 import javax.validation.ConstraintViolation;
 import javax.validation.Validation;

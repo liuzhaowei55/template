@@ -11,6 +11,10 @@
     <artifactId>${artifactId}</artifactId>
 
     <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
         <!-- com.alibaba.cola start -->
         <dependency>
             <groupId>com.alibaba.cola</groupId>
