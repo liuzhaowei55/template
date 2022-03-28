@@ -9,4 +9,26 @@
 
     <artifactId>${artifactId}</artifactId>
 
+    <dependencies>
+        <!-- 项目依赖 -->
+        <dependency>
+            <groupId>${groupId}</groupId>
+            <artifactId>${rootArtifactId}-base</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>${groupId}</groupId>
+            <artifactId>${rootArtifactId}-client</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>${groupId}</groupId>
+            <artifactId>${rootArtifactId}-domain</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>${groupId}</groupId>
+            <artifactId>${rootArtifactId}-infrastructure</artifactId>
+        </dependency>
+        <!-- 项目依赖 End -->
+        
+    </dependencies>
+
 </project>

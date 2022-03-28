@@ -11,10 +11,16 @@
     <artifactId>${artifactId}</artifactId>
 
     <dependencies>
+        <!-- 项目依赖 -->
         <dependency>
             <groupId>${groupId}</groupId>
             <artifactId>${rootArtifactId}-base</artifactId>
         </dependency>
+        <dependency>
+            <groupId>${groupId}</groupId>
+            <artifactId>${rootArtifactId}-domain</artifactId>
+        </dependency>
+        <!-- 项目依赖 End -->
         <!-- https://mvnrepository.com/artifact/com.baomidou/mybatis-plus-boot-starter -->
         <dependency>
             <groupId>com.baomidou</groupId>

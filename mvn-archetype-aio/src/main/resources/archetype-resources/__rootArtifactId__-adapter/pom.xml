@@ -11,6 +11,16 @@
     <artifactId>${artifactId}</artifactId>
 
     <dependencies>
+        <!-- 项目依赖 -->
+        <dependency>
+            <groupId>${groupId}</groupId>
+            <artifactId>${rootArtifactId}-base</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>${groupId}</groupId>
+            <artifactId>${rootArtifactId}-app</artifactId>
+        </dependency>
+        <!-- 项目依赖 End -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
@@ -21,6 +31,11 @@
             <artifactId>cola-component-dto</artifactId>
         </dependency>
         <!-- com.alibaba.cola end -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
 </project>
